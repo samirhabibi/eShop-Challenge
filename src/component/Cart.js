@@ -176,13 +176,23 @@ class Cart extends Component {
     if (this.props.cart.length !== 0) {
       return (
         <div>
+          <Typography variant="h5" align="center">
+            <b>Shopping Basket</b>
+          </Typography>
           <Typography className="cart">{this.cartList()}</Typography>
           <Typography>{this.cartTotal()}</Typography>
         </div>
       );
     }
 
-    return <h1 className="cart">cart empty</h1>;
+    return (
+      <div>
+        <Typography variant="h5" align="center">
+          <b>Your Shopping Basket is empty.</b>
+        </Typography>
+        <Typography>{this.cartTotal()}</Typography>
+      </div>
+    );
   }
 }
 
