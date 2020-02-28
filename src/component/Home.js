@@ -40,9 +40,7 @@ class Home extends Component {
   }
 
   render() {
-    const { error, loading, body } = this.props;
-    const { classes } = this.props;
-    console.log(this.props);
+    const { error, loading, body, classes } = this.props;
 
     if (error) {
       return <div>Error! {error.message}</div>;
@@ -67,17 +65,19 @@ class Home extends Component {
                       <b>Price: {item.price} kr</b>
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button variant="contained" color="primary">
-                      <Link
-                        to="/"
-                        onClick={this.dispachAddToCart.bind(this, item)}
-                        style={{ textDecoration: "none", color: "white" }}
-                      >
-                        Add to cart
-                      </Link>
-                    </Button>
-                  </CardActions>
+                  <Grid container justify="flex-end">
+                    <CardActions>
+                      <Button variant="contained" color="primary">
+                        <Link
+                          to="/"
+                          onClick={this.dispachAddToCart.bind(this, item)}
+                          style={{ textDecoration: "none", color: "white" }}
+                        >
+                          Add to cart
+                        </Link>
+                      </Button>
+                    </CardActions>
+                  </Grid>
                 </Card>
               </Grid>
             ))}

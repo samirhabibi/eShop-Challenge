@@ -61,10 +61,10 @@ class Navbar extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
     cart: state.cart
   };
-}
+};
 
 export default compose(withStyles(useStyles), connect(mapStateToProps))(Navbar);

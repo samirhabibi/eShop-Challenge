@@ -165,14 +165,13 @@ class Cart extends Component {
     );
   }
   totalAmount(cartArray) {
-    return cartArray.reduce((acum, cart) => {
-      acum += cart.price * cart.units;
-      return acum;
+    return cartArray.reduce((sum, cart) => {
+      sum += cart.price * cart.units;
+      return sum;
     }, 0);
   }
 
   render() {
-    console.log(this.props);
     if (this.props.cart.length !== 0) {
       return (
         <div>
@@ -196,12 +195,12 @@ class Cart extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
     cart: state.cart
   };
-}
-function mapActionsToProps(dispatch) {
+};
+const mapActionsToProps = dispatch => {
   return bindActionCreators(
     {
       deleteFromCart,
@@ -209,7 +208,7 @@ function mapActionsToProps(dispatch) {
     },
     dispatch
   );
-}
+};
 
 export default compose(
   withStyles(useStyles),
