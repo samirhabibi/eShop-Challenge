@@ -3,7 +3,7 @@
 ## Available Scripts
 
 First, Install the needed packages:
-### `npm start`
+### `npm install`
 
 Then in the project directory, you can run:
 
